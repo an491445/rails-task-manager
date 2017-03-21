@@ -3,8 +3,8 @@
   <ul>
     <% @tasks.each do |task| %>
       <li><strong><%= task.name %></strong><br>
-          <%= link_to "details", task_path(task.id) %> | <%= link_to "edit", edit_task_path(task.id) %> | <%= link_to 'delete', task, :method => :delete, :confirm => "You sure?" %>
-        </li>
+        <%= link_to "details", task_path(task.id) %> | <%= link_to "edit", edit_task_path(task.id) %> | <%= link_to 'delete', task, method: :delete, data: {confirm: "Are you sure that you want to delete the task '#{task.name}'?"} %>
+      </li>
     <% end %>
   </ul>
 
