@@ -1,0 +1,5 @@
+<h1>Details</h1>
+<p><%= @task.name %></p>
+<p>Details: <%= @task.details %></p>
+<p>Status: <%= @task.completed ? "completed" : "not completed" %></p>
+<p><%= link_to "Back to index", tasks_path %></p>
