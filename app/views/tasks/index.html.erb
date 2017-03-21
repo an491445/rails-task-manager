@@ -2,8 +2,11 @@
   <h1>All tasks</h1>
   <ul>
     <% @tasks.each do |task| %>
-      <li><strong><%= task.name %></strong><br>
-        <%= link_to "details", task_path(task.id) %> | <%= link_to "edit", edit_task_path(task.id) %> | <%= link_to 'delete', task, method: :delete, data: {confirm: "Are you sure that you want to delete the task '#{task.name}'?"} %>
+      <li>
+        <div <%= "class=task-completed" if task.completed %>>
+          <strong><%= task.name %></strong><br>
+          <%= link_to "details", task_path(task.id) %> | <%= link_to "edit", edit_task_path(task.id) %> | <%= link_to 'delete', task, method: :delete, data: {confirm: "Are you sure that you want to delete the task '#{task.name}'?"} %>
+        </div>
       </li>
     <% end %>
   </ul>
